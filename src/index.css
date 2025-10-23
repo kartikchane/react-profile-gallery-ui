@@ -37,5 +37,50 @@
   background: rgba(255,255,255,0.3);
 }
 
+/* Custom animations for gallery */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes counterUpdate {
+  0% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.1) translateY(-2px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.4s ease-out forwards;
+}
+
+.animate-counterUpdate {
+  animation: counterUpdate 0.3s ease-out forwards;
+}
+
+/* Smooth scale utilities */
+.scale-98 { transform: scale(0.98); }
+.scale-102 { transform: scale(1.02); }
+
 html,body,#root { height: 100%; }
 body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
